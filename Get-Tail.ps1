@@ -17,6 +17,7 @@ function Get-Tail{
             $check2 = Get-Content -Path $File -Tail 1
             If("$check1" -ne "$check2"){
                 Write-Host $check2
+                start-sleep -Milliseconds 250
                 $check1 = $check2
             }
         } While ($LoopDeLoop -le 5)
